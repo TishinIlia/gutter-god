@@ -1,0 +1,42 @@
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
+import perfectionist from 'eslint-plugin-perfectionist'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import reactPlugin from 'eslint-plugin-react'
+
+export default tseslint.config(
+  { ignores: ['node_modules', 'dist', 'public', '*.config.{js,mjs,ts}'] },
+  {
+    files: ['**/*.{ts,tsx}'],
+    ...reactPlugin.configs.flat.recommended,
+    ...reactPlugin.configs.flat['jsx-runtime'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      ...reactPlugin.configs.flat.recommended.languageOption,
+      globals: { ...globals.browser, ...globals.serviceworker },
+    },
+    plugins: {
+      'jsx-a11y': pluginJsxA11y,
+      perfectionist,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      ...pluginJsxA11y.configs.recommended.rules,
+      'perfectionist/sort-imports': 'error',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+    },
+  },
+  js.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  eslintPluginPrettierRecommended
+)
