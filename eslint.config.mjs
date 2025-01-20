@@ -7,6 +7,7 @@ import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import perfectionist from 'eslint-plugin-perfectionist'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
+import tailwind from 'eslint-plugin-tailwindcss'
 
 export default tseslint.config(
   { ignores: ['node_modules', 'dist', 'public', '*.config.{js,mjs,ts}'] },
@@ -35,6 +36,7 @@ export default tseslint.config(
       ],
     },
   },
+  ...tailwind.configs['flat/recommended'],
   js.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
