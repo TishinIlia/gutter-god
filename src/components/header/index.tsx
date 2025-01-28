@@ -10,6 +10,8 @@ interface HeaderProps {
   seModalOpen: (open: boolean) => void
 }
 
+import logoUrl from '@/assets/logo.svg?inline'
+
 const Header: FC<HeaderProps> = ({ seModalOpen }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -20,11 +22,7 @@ const Header: FC<HeaderProps> = ({ seModalOpen }) => {
         className="mx-auto flex w-screen items-center justify-between p-4 lg:px-6"
       >
         <div className="flex">
-          <img
-            alt="logo"
-            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-            className="h-8 w-auto"
-          />
+          <img alt="logo" src={logoUrl} className="h-8 w-auto" />
           <a href="#d" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
           </a>

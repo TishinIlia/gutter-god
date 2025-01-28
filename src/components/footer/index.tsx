@@ -1,3 +1,4 @@
+import logoUrl from '@/assets/logo.svg?inline'
 import { NAVIGATION, SOCIAL } from '@/utils/const.tsx'
 import { FC } from 'react'
 
@@ -8,11 +9,7 @@ const Footer: FC = () => (
         <div className="flex">
           <a href="#d" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              alt="logo"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
+            <img alt="logo" src={logoUrl} className="h-8 w-auto" />
           </a>
         </div>
         <nav>

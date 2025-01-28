@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: path.resolve(__dirname, '/gutter-god/'),
+  base: path.resolve(__dirname, '/'),
   plugins: [react()],
   resolve: {
     alias: {
