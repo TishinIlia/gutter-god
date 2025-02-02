@@ -18,7 +18,11 @@ const FAQ: FC = () => (
           <Accordion type="multiple" className="pt-6">
             {FAQs.map((faq, index) => (
               <AccordionItem value={`${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionTrigger>
+                  <span className="text-base/7  font-semibold text-foreground">
+                    {faq.question}
+                  </span>
+                </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-base/7 text-foreground">{faq.answer}</p>
                 </AccordionContent>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface Navigation {
   name: string
@@ -69,18 +69,130 @@ export const SOCIAL: Social[] = [
 
 interface FAQType {
   question: string
-  answer: string
+  answer: string | ReactNode
 }
 
 export const FAQs: FAQType[] = [
   {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: 'How Often Should You Clean Your Gutters?',
+    answer: (
+      <>
+        Maintaining a regular gutter cleaning schedule is essential to keeping
+        your system functioning properly. <br /> <br />
+        For most homes without a large number of surrounding trees, cleaning
+        twice a year—once in spring and once in fall—is usually sufficient.
+        However, if your property is heavily shaded by trees, more frequent
+        cleanings may be necessary.
+        <br />
+        <br />
+        There are several situations where you may need to clean your gutters
+        more often, including:
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+          <li>
+            After storms that deposit leaves, dirt, and debris into your gutters
+          </li>
+          <li>
+            When trees are in close proximity to your home, increasing the
+            likelihood of debris buildup
+          </li>
+          <li>If water spills over the edges of your gutters during rain</li>
+          <li>When the gutters start sagging due to excessive weight</li>
+          <li>If plants begin growing inside the gutters</li>
+          <li>
+            When birds, insects, or other pests nest in your gutter system
+          </li>
+        </ul>
+      </>
+    ),
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: 'Signs Your Gutters Need Cleaning',
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "There are a few clear indicators that your gutters may be clogged and need immediate attention. You might notice water overflowing from certain areas during rain, or find that no water is coming out of your downspouts, suggesting a blockage. Additionally, if debris is visibly accumulating on top of the gutters, it's a sign they need cleaning as soon as possible.",
+  },
+  {
+    question: 'How Long Does Gutter Cleaning Take?',
+    answer:
+      'The time required to clean gutters depends on the size of your home and the number of stories. Smaller homes with minimal debris can be cleaned in as little as 20–30 minutes, while homes with significant buildup may take closer to 60–90 minutes. For larger properties (5,000 sq. ft. or more), the process may take up to 2–3 hours if the debris is substantial. Factors such as gutter guards or roofs that are not walkable can extend cleaning time.',
+  },
+  {
+    question: 'What Happens If You Don’t Clean Your Gutters?',
+    answer: (
+      <>
+        Neglecting gutter maintenance can lead to serious consequences,
+        including:
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+          <li>
+            <strong>Basement Flooding</strong> – When water overflows due to
+            clogged gutters, it can saturate the soil near your foundation,
+            leading to leaks and basement flooding.
+          </li>
+          <li>
+            <strong>Foundation Damage</strong> – Water pooling around the base
+            of your home can weaken the foundation over time, causing cracks
+            that are costly to repair.
+          </li>
+          <li>
+            <strong>Roof Damage</strong> – Blockages prevent proper drainage,
+            causing water to back up under roofing materials and potentially
+            leading to leaks.
+          </li>
+          <li>
+            <strong>Pest Problems</strong> – Stagnant water and decaying debris
+            create an inviting environment for insects like mosquitoes and
+            termites, increasing the risk of infestations.
+          </li>
+          <li>
+            <strong>Ice Dams</strong> – In colder regions, clogged gutters
+            contribute to ice dams, which can damage roofs and lead to costly
+            repairs.
+          </li>
+          <li>
+            <strong>Siding Damage</strong> – Overflowing water can damage the
+            siding, contributing to wood rot and structural deterioration.
+          </li>
+          <li>
+            <strong>Health Hazards</strong> – Standing water and excess moisture
+            promote mold and mildew growth, which can affect indoor air quality.
+          </li>
+          <li>
+            <strong>Safety Risks</strong> – In winter, clogged gutters may cause
+            icicles to form, posing a falling hazard. Additionally, excess
+            weight from debris and ice can cause gutters to detach from the
+            home.
+          </li>
+          <li>
+            <strong>Landscape Erosion</strong> – Water spilling over clogged
+            gutters can wash away soil and damage nearby plants and shrubs.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: 'How Long Does a Professional Gutter Cleaning Service Take?',
+    answer: (
+      <>
+        A professional gutter cleaning service varies in duration based on the
+        size of your home and the extent of debris accumulation.
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+          <li>Small homes with little debris: 20–30 minutes</li>
+          <li>Small homes with a lot of debris: 60–90 minutes</li>
+          <li>Larger homes (5,000+ sq. ft.): 2–3 hours with heavy debris</li>
+        </ul>
+        Additional factors, such as gutter covers or steep, non-walkable roofs,
+        can extend the cleaning time.
+      </>
+    ),
+  },
+  {
+    question: 'Do You Need to Be Home for Gutter Cleaning?',
+    answer:
+      "Most gutter cleaning services can be performed without the homeowner being present, as all work is done outside. We offer automated notifications when the service is on the way and provide photos after completion, ensuring peace of mind even if you're not home.",
+  },
+  {
+    question: 'Are Underground Drains Included in Gutter Cleaning Services?',
+    answer:
+      'We do not include underground drain cleaning as part of a standard gutter cleaning service.',
   },
 ]
