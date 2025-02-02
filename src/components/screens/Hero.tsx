@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button'
 import { FC } from 'react'
 
+import heroImg from '/gutter-hero.jpeg'
+
 interface HeroProps {
   seModalOpen: (open: boolean) => void
 }
@@ -11,7 +13,7 @@ const Hero: FC<HeroProps> = ({ seModalOpen }) => (
       <div className="absolute inset-0 -z-10 min-h-full min-w-full bg-primary-foreground/30 dark:bg-primary-foreground/35"></div>
       <img
         alt=""
-        src="/gutter-hero.jpeg"
+        src={heroImg}
         className="absolute inset-0 -z-20 size-full object-cover"
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

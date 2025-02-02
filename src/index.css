@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,11 +32,11 @@
     --radius: 0.5rem
   }
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 227, 13%, 14%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 227, 13%, 14%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 227, 13%, 14%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;

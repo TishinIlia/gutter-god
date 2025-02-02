@@ -7,7 +7,7 @@ interface HeaderProps {
   seModalOpen: (open: boolean) => void
 }
 
-import logoUrl from '@/assets/logo.svg?inline'
+import Logo from '@/components/logo/logo.tsx'
 
 const Header: FC<HeaderProps> = ({ seModalOpen }) => {
   return (
@@ -17,9 +17,13 @@ const Header: FC<HeaderProps> = ({ seModalOpen }) => {
         className="mx-auto flex w-screen items-center justify-between p-4 lg:px-6"
       >
         <div className="flex">
-          <img alt="logo" src={logoUrl} className="h-8 w-auto" />
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/">
+            <span className="flex items-center">
+              <Logo className="h-8 w-auto fill-foreground" />
+              <span className="ml-1 text-xl font-medium uppercase text-foreground">
+                Roseville Gutter
+              </span>
+            </span>
           </a>
         </div>
 
