@@ -1,43 +1,59 @@
-import { CloudIcon } from 'lucide-react'
+import {
+  DrillIcon,
+  DropletIcon,
+  LeafIcon,
+  ListCheckIcon,
+  PaintbrushIcon,
+  Trash2Icon,
+} from 'lucide-react'
 import { FC } from 'react'
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Debris removal',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudIcon,
+      'Removing leaves, twigs, dirt, and other debris from the gutters and downspouts.',
+    icon: LeafIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Downspout inspection and cleaning',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: CloudIcon,
+      'Checking for clogs in downspouts and clearing them if necessary.',
+    icon: PaintbrushIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Gutter flushing',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: CloudIcon,
+      'Using a hose to flush the gutters and check for proper water flow.',
+    icon: DropletIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Inspection for damage',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: CloudIcon,
+      'Assessing the condition of the gutters, including seams, brackets, and fascia boards, for signs of wear and tear.',
+    icon: ListCheckIcon,
+  },
+  {
+    name: 'Minor repairs',
+    description:
+      'Addressing small issues like loose fasteners or minor leaks with sealant.',
+    icon: DrillIcon,
+  },
+  {
+    name: 'Cleanup',
+    description: 'Bagging and removing all debris from the property.',
+    icon: Trash2Icon,
   },
 ]
 
 const Service: FC = () => (
-  <section className="mx-auto bg-amber-400 px-6 py-24 sm:py-32  lg:px-8">
-    <div className="mx-auto max-w-2xl lg:text-center">
+  <section className="mx-auto bg-green-200 px-6 py-24 sm:py-32  lg:px-8">
+    <div className="mx-auto max-w-3xl lg:text-center">
       <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
-        Everything you need to deploy your app
+        What does a typical gutter cleaning include?
       </h2>
       <p className="mt-6 text-pretty text-lg/8 text-foreground">
-        Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-        Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In
-        mi viverra elit nunc.
+        Key elements of a gutter cleaning:
       </p>
     </div>
     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -45,7 +61,7 @@ const Service: FC = () => (
         {features.map((feature) => (
           <div key={feature.name} className="relative pl-16">
             <dt className="text-base/7 font-semibold text-foreground">
-              <div className="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-amber-700">
+              <div className="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-green-700">
                 <feature.icon
                   aria-hidden="true"
                   className="size-6 text-background"

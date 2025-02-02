@@ -1,7 +1,11 @@
 import { Button } from '@/components/ui/button'
 import { FC } from 'react'
 
-const Hero: FC = () => (
+interface HeroProps {
+  seModalOpen: (open: boolean) => void
+}
+
+const Hero: FC<HeroProps> = ({ seModalOpen }) => (
   <section className="flex flex-1 flex-col">
     <div className="relative isolate flex h-full flex-1 flex-col justify-center overflow-hidden py-14">
       <div className="absolute inset-0 -z-10 min-h-full min-w-full bg-primary-foreground/30 dark:bg-primary-foreground/35"></div>
@@ -14,13 +18,13 @@ const Hero: FC = () => (
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
-              We help you to clean your gutters quickly!
+              We help you clean your gutters quickly!
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-foreground sm:text-xl/8">
               Efficient gutter cleaning solutions tor a hassle-free experience.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button>Get started</Button>
+              <Button onClick={() => seModalOpen(true)}>Get started</Button>
             </div>
           </div>
         </div>
