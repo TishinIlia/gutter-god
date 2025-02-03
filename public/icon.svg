@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .favicon { stroke: #fff }
+    }
+  </style>
+  <path fill="none" class="favicon" stroke="#000" stroke-width="2" d="M2 2h20v4c0 14-4 16-10 16S2 20 2 8z"/></svg>

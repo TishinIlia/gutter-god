@@ -1,0 +1,13 @@
+{
+  "name": "Roseville Gutter Cleaning",
+  "short_name": "Roseville Gutter",
+  "description": "Roseville Gutter Cleaning service",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-mask.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
