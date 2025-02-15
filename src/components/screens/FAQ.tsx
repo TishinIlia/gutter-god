@@ -8,23 +8,23 @@ import { FAQs } from '@/utils/const.tsx'
 import { FC } from 'react'
 
 const FAQ: FC = () => (
-  <div className="bg-background px-6 py-24 sm:py-32  lg:px-8">
+  <div className="bg-background px-6 py-24 sm:py-32 lg:px-8">
     <div className="mx-auto">
       <div className="mx-auto max-w-4xl">
-        <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
+        <h2 className="text-foreground text-5xl font-semibold tracking-tight sm:text-7xl">
           Frequently asked questions
         </h2>
-        <dl className="mt-10 space-y-6 divide-y divide-foreground/10">
+        <dl className="divide-foreground/10 mt-10 space-y-6 divide-y">
           <Accordion type="multiple" className="pt-6">
             {FAQs.map((faq, index) => (
               <AccordionItem value={`${index}`}>
                 <AccordionTrigger>
-                  <span className="text-base/7  font-semibold text-foreground">
+                  <span className="text-foreground text-base/7 font-semibold">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-base/7 text-foreground">{faq.answer}</p>
+                  <p className="text-foreground text-base/7">{faq.answer}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}

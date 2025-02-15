@@ -1,22 +1,22 @@
 import { FC } from 'react'
 
 const Testimonials: FC = () => (
-  <section className="bg-background  px-6 py-24 sm:py-32  lg:px-8">
+  <section className="bg-background px-6 py-24 sm:py-32 lg:px-8">
     <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
+      <h2 className="text-foreground text-5xl font-semibold tracking-tight sm:text-7xl">
         Reviews
       </h2>
     </div>
     <div className="mx-auto mt-8 max-w-7xl px-6 lg:mt-16 lg:px-8">
       <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
+        <div className="flex flex-col pb-10 sm:pb-16 lg:pr-8 lg:pb-0 xl:pr-20">
           <img
             alt=""
             src="https://tailwindui.com/plus/img/logos/tuple-logo-gray-900.svg"
             className="h-12 self-start"
           />
           <figure className="mt-10 flex flex-auto flex-col justify-between">
-            <blockquote className="text-lg/8 text-foreground">
+            <blockquote className="text-foreground text-lg/8">
               <p>
                 “Amet amet eget scelerisque tellus sit neque faucibus non
                 eleifend. Integer eu praesent at a. Ornare arcu gravida natoque
@@ -32,7 +32,7 @@ const Testimonials: FC = () => (
                 className="size-14 rounded-full bg-gray-50"
               />
               <div className="text-base">
-                <div className="font-semibold text-foreground">
+                <div className="text-foreground font-semibold">
                   Judith Black
                 </div>
                 <div className="mt-1 text-gray-500">CEO of Tuple</div>
@@ -40,14 +40,14 @@ const Testimonials: FC = () => (
             </figcaption>
           </figure>
         </div>
-        <div className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
+        <div className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8 xl:pl-20">
           <img
             alt=""
             src="https://tailwindui.com/plus/img/logos/reform-logo-gray-900.svg"
             className="h-12 self-start"
           />
           <figure className="mt-10 flex flex-auto flex-col justify-between">
-            <blockquote className="text-lg/8 text-foreground">
+            <blockquote className="text-foreground text-lg/8">
               <p>
                 “Excepteur veniam labore ullamco eiusmod. Pariatur consequat
                 proident duis dolore nulla veniam reprehenderit nisi officia
@@ -62,7 +62,7 @@ const Testimonials: FC = () => (
                 className="size-14 rounded-full bg-gray-50"
               />
               <div className="text-base">
-                <div className="font-semibold text-foreground">
+                <div className="text-foreground font-semibold">
                   Joseph Rodriguez
                 </div>
                 <div className="mt-1 text-gray-500">CEO of Reform</div>

@@ -8,16 +8,16 @@ const Footer: FC = () => (
         <div className="flex">
           <a href="/">
             <span className="flex items-center">
-              <Logo className="h-8 w-auto fill-foreground" />
-              <span className="ml-1 text-xl font-medium uppercase text-foreground">
+              <Logo className="fill-foreground h-8 w-auto" />
+              <span className="text-foreground ml-1 text-xl font-medium uppercase">
                 Roseville Gutter
               </span>
             </span>
           </a>
         </div>
       </div>
-      <div className="mt-4 border-t border-foreground/10 pt-4 md:flex md:items-center md:justify-between">
-        <p className="mt-8 text-sm/6 text-foreground md:order-1 md:mt-0">
+      <div className="border-foreground/10 mt-4 border-t pt-4 md:flex md:items-center md:justify-between">
+        <p className="text-foreground mt-8 text-sm/6 md:order-1 md:mt-0">
           &copy; {new Date().getFullYear()} Roseville Gutter. All rights
           reserved.
         </p>

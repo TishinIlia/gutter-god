@@ -19,8 +19,8 @@ const Header: FC<HeaderProps> = ({ seModalOpen }) => {
         <div className="flex">
           <a href="/">
             <span className="flex items-center">
-              <Logo className="h-8 w-auto fill-foreground" />
-              <span className="ml-1 text-xl font-medium uppercase text-foreground">
+              <Logo className="fill-foreground h-8 w-auto" />
+              <span className="text-foreground ml-1 text-xl font-medium uppercase">
                 Roseville Gutter
               </span>
             </span>
