@@ -14,7 +14,7 @@ const FAQ: FC = () => (
         <h2 className="text-foreground text-5xl font-semibold tracking-tight sm:text-7xl">
           Frequently asked questions
         </h2>
-        <dl className="divide-foreground/10 mt-10 space-y-6 divide-y">
+        <div className="divide-foreground/10 mt-10 space-y-6 divide-y">
           <Accordion type="multiple" className="pt-6">
             {FAQs.map((faq, index) => (
               <AccordionItem value={`${index}`}>
@@ -29,7 +29,7 @@ const FAQ: FC = () => (
               </AccordionItem>
             ))}
           </Accordion>
-        </dl>
+        </div>
       </div>
     </div>
   </div>
