@@ -3,9 +3,9 @@ import { FC, SVGProps } from 'react'
 const WhatsappIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
       version="1.1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <g>

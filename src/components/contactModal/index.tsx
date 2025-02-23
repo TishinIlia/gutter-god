@@ -1,3 +1,9 @@
+import { FC } from 'react'
+import { useForm } from 'react-hook-form'
+
+import { valibotResolver } from '@hookform/resolvers/valibot'
+import * as v from 'valibot'
+
 import MethodToggle from '@/components/methodToggle/methodToggle.tsx'
 import Required from '@/components/required'
 import { Button } from '@/components/ui/button'
@@ -18,10 +24,6 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input.tsx'
-import { valibotResolver } from '@hookform/resolvers/valibot'
-import { FC } from 'react'
-import { useForm } from 'react-hook-form'
-import * as v from 'valibot'
 
 interface ContactModalProps {
   open: boolean
@@ -29,6 +31,7 @@ interface ContactModalProps {
 }
 
 const formSchema = v.object({
+  method: v.picklist(['phone', 'text', 'whatsapp']),
   name: v.pipe(
     v.string('Your name must be a string.'),
     v.trim(),
@@ -39,29 +42,28 @@ const formSchema = v.object({
     v.trim(),
     v.digits('The string contains something other than digits.')
   ),
-  method: v.picklist(['phone', 'text', 'whatsapp']),
 })
 
 type formSchemaType = v.InferInput<typeof formSchema>
 
 const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
   const form = useForm<formSchemaType>({
-    resolver: valibotResolver(formSchema),
     defaultValues: {
+      method: 'phone',
       name: '',
       phone: '',
-      method: 'phone',
     },
+    resolver: valibotResolver(formSchema),
   })
 
-  const { handleSubmit, control } = form
+  const { control, handleSubmit } = form
 
   const onSubmit = (values: formSchemaType) => {
     console.log(values)
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog onOpenChange={setOpen} open={open}>
       <DialogPortal>
         <DialogContent>
           <DialogHeader>
@@ -73,14 +75,10 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
             <Card>
               <CardContent className="pt-6">
                 <Form {...form}>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     <FormField
                       control={control}
                       name="name"
-                      rules={{
-                        minLength: 1,
-                        required: true,
-                      }}
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>
@@ -89,25 +87,24 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              type="text"
-                              required
                               minLength={1}
                               placeholder="John Galt"
+                              required
+                              type="text"
                               {...field}
                             />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
+                      rules={{
+                        minLength: 1,
+                        required: true,
+                      }}
                     />
                     <FormField
                       control={control}
                       name="phone"
-                      rules={{
-                        pattern: /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
-                        required: true,
-                        minLength: 1,
-                      }}
                       render={({ field }) => {
                         return (
                           <FormItem>
@@ -117,17 +114,22 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                             </FormLabel>
                             <FormControl>
                               <Input
-                                type="tel"
-                                required
                                 minLength={1}
-                                placeholder="1234567890"
                                 pattern="[0-9]{10}"
+                                placeholder="1234567890"
+                                required
+                                type="tel"
                                 {...field}
                               />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )
+                      }}
+                      rules={{
+                        minLength: 1,
+                        pattern: /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
+                        required: true,
                       }}
                     />
                     <FormField

@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui/button'
 import { FC } from 'react'
+
+import { Button } from '@/components/ui/button'
 
 const CTA: FC = () => (
   <div className="bg-amber-400 px-6 py-24 sm:py-32 lg:px-8">

@@ -1,5 +1,6 @@
-import Logo from '@/components/logo/logo.tsx'
 import { FC } from 'react'
+
+import Logo from '@/components/logo/logo.tsx'
 
 const Footer: FC = () => (
   <footer className="bg-background">

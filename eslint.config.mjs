@@ -28,7 +28,54 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...pluginJsxA11y.configs.recommended.rules,
-      'perfectionist/sort-imports': 'error',
+      'perfectionist/sort-interfaces': [
+        'error',
+        {
+          newlinesBetween: 'never',
+        },
+      ],
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          newlinesBetween: 'never',
+        },
+      ],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          newlinesBetween: 'never',
+        },
+      ],
+      'perfectionist/sort-enums': [
+        'error',
+        {
+          newlinesBetween: 'never',
+        },
+      ],
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          internalPattern: ['^@/(.*)$'],
+          groups: [
+            'react',
+            ['builtin', 'external'],
+            'internal-type',
+            'internal',
+            ['parent-type', 'sibling-type', 'index-type'],
+            ['parent', 'sibling', 'index'],
+            'object',
+            'unknown',
+          ],
+          customGroups: {
+            value: {
+              react: ['^react$', '^react-.+'],
+            },
+            type: {
+              react: ['^react$', '^react-.+'],
+            },
+          },
+        },
+      ],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

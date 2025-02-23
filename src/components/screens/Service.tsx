@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import {
   DrillIcon,
   DropletIcon,
@@ -6,43 +8,42 @@ import {
   PaintbrushIcon,
   Trash2Icon,
 } from 'lucide-react'
-import { FC } from 'react'
 
 const features = [
   {
-    name: 'Debris removal',
     description:
       'Removing leaves, twigs, dirt, and other debris from the gutters and downspouts.',
     icon: LeafIcon,
+    name: 'Debris removal',
   },
   {
-    name: 'Downspout inspection and cleaning',
     description:
       'Checking for clogs in downspouts and clearing them if necessary.',
     icon: PaintbrushIcon,
+    name: 'Downspout inspection and cleaning',
   },
   {
-    name: 'Gutter flushing',
     description:
       'Using a hose to flush the gutters and check for proper water flow.',
     icon: DropletIcon,
+    name: 'Gutter flushing',
   },
   {
-    name: 'Inspection for damage',
     description:
       'Assessing the condition of the gutters, including seams, brackets, and fascia boards, for signs of wear and tear.',
     icon: ListCheckIcon,
+    name: 'Inspection for damage',
   },
   {
-    name: 'Minor repairs',
     description:
       'Addressing small issues like loose fasteners or minor leaks with sealant.',
     icon: DrillIcon,
+    name: 'Minor repairs',
   },
   {
-    name: 'Cleanup',
     description: 'Bagging and removing all debris from the property.',
     icon: Trash2Icon,
+    name: 'Cleanup',
   },
 ]
 
@@ -59,7 +60,7 @@ const Service: FC = () => (
     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
       <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
         {features.map((feature) => (
-          <div key={feature.name} className="relative pl-16">
+          <div className="relative pl-16" key={feature.name}>
             <dt className="text-foreground text-base/7 font-semibold">
               <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-green-700">
                 <feature.icon

@@ -1,3 +1,5 @@
+import { FC, useState } from 'react'
+
 import ContactModal from '@/components/contactModal'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
@@ -9,7 +11,6 @@ import {
   // Testimonials,
   FAQ,
 } from '@/components/screens'
-import { FC, useState } from 'react'
 
 const App: FC = () => {
   // TODO: Wrap with hook

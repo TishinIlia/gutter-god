@@ -27,9 +27,9 @@ const About: FC = () => (
           </p>
         </div>
         <img
-          src="/gutter-about.jpg"
           alt=""
           className="mt-10 aspect-auto w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+          src="/gutter-about.jpg"
         />
       </div>
     </div>

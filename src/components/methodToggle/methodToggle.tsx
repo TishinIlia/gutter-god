@@ -1,32 +1,34 @@
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group.tsx'
-import WhatsappIcon from '@/components/whatsappIcon'
-import { MessageCircleIcon, PhoneIcon } from 'lucide-react'
 import { FC } from 'react'
 
+import { MessageCircleIcon, PhoneIcon } from 'lucide-react'
+
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group.tsx'
+import WhatsappIcon from '@/components/whatsappIcon'
+
 interface MethodToggleProps {
-  value: 'phone' | 'text' | 'whatsapp'
   onChange: (value: string) => void
+  value: 'phone' | 'text' | 'whatsapp'
 }
 
-const MethodToggle: FC<MethodToggleProps> = ({ value, onChange }) => {
+const MethodToggle: FC<MethodToggleProps> = ({ onChange, value }) => {
   return (
     <ToggleGroup
-      type="single"
-      value={value}
+      className="flex w-full items-center"
       onValueChange={(value) => {
         if (value) onChange(value)
       }}
-      className="flex w-full items-center"
+      type="single"
+      value={value}
     >
-      <ToggleGroupItem value="phone" className="max-h-none max-w-none flex-1">
+      <ToggleGroupItem className="max-h-none max-w-none flex-1" value="phone">
         Call me <PhoneIcon />
       </ToggleGroupItem>
-      <ToggleGroupItem value="text" className="max-h-none max-w-none flex-1">
+      <ToggleGroupItem className="max-h-none max-w-none flex-1" value="text">
         Text me <MessageCircleIcon />
       </ToggleGroupItem>
       <ToggleGroupItem
-        value="whatsapp"
         className="max-h-none max-w-none flex-1"
+        value="whatsapp"
       >
         Whatsapp me
         <WhatsappIcon />
