@@ -1,2 +1,2 @@
-export * from './variants'
 export * from './toggle'
+export * from './toggleVariants'
