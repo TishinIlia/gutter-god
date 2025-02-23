@@ -3,7 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import perfectionist from 'eslint-plugin-perfectionist'
 import reactPlugin from 'eslint-plugin-react'
 import prettierConfig from 'eslint-config-prettier'
@@ -20,14 +20,12 @@ export default tseslint.config(
       globals: { ...globals.browser, ...globals.serviceworker },
     },
     plugins: {
-      'jsx-a11y': pluginJsxA11y,
       perfectionist,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      ...pluginJsxA11y.configs.recommended.rules,
       'perfectionist/sort-interfaces': [
         'error',
         {
@@ -85,5 +83,6 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  jsxA11y.flatConfigs.strict,
   prettierConfig
 )
