@@ -46,6 +46,8 @@ layer(base);
   --chart-4: hsl(43 74% 66%);
   --chart-5: hsl(27 87% 67%);
   --radius: 0.5rem;
+
+  --header-height: 85px;
 }
 
 @theme inline {
