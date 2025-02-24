@@ -12,9 +12,12 @@ import {
   FAQ,
 } from '@/components/screens'
 
+import oaksUrl from '/oaks.svg'
+
 const App: FC = () => {
   // TODO: Wrap with hook
   const [modalOpen, seModalOpen] = useState<boolean>(false)
+  const imgUrl = new URL(oaksUrl, import.meta.url).href
 
   return (
     <>
@@ -22,11 +25,16 @@ const App: FC = () => {
         <Header seModalOpen={seModalOpen} />
         <Hero seModalOpen={seModalOpen} />
       </div>
-      <Service />
+      <div
+        className="bg-auto bg-repeat"
+        style={{ backgroundImage: `url(${imgUrl})` }}
+      >
+        <Service />
+        <FAQ />
+      </div>
       {/*<About />*/}
       {/*<Testimonials />*/}
       {/*<CTA />*/}
-      <FAQ />
       <Footer />
       <ContactModal open={modalOpen} setOpen={seModalOpen} />
     </>

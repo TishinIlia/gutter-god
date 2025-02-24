@@ -47,37 +47,38 @@ const features = [
   },
 ]
 
-const Service: FC = () => (
-  <section className="mx-auto bg-green-200 px-6 py-24 sm:py-32 lg:px-8">
-    <div className="mx-auto max-w-3xl lg:text-center">
-      <h2 className="text-foreground text-5xl font-semibold tracking-tight sm:text-7xl">
-        What does a typical gutter cleaning include?
-      </h2>
-      <p className="text-foreground mt-6 text-lg/8 text-pretty">
-        Key elements of a gutter cleaning:
-      </p>
-    </div>
-    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-      <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-        {features.map((feature) => (
-          <div className="relative pl-16" key={feature.name}>
-            <dt className="text-foreground text-base/7 font-semibold">
-              <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-green-700">
-                <feature.icon
-                  aria-hidden="true"
-                  className="text-background size-6"
-                />
+const Service: FC = () => {
+  return (
+    <section className="mx-auto px-7 py-7 sm:py-16 lg:px-8">
+      <div className="mx-auto max-w-2xl">
+        <h2 className="text-accent-foreground text-sm font-bold tracking-tight sm:text-3xl">
+          What does a typical gutter cleaning include?
+        </h2>
+        <p className="text-accent-foreground mt-1 text-xs font-light text-pretty sm:mt-2 sm:text-2xl">
+          Key elements of a gutter cleaning:
+        </p>
+      </div>
+      <div className="max-w-2xl py-4 sm:mx-auto sm:py-20">
+        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:max-w-none md:grid-cols-2 md:gap-y-16">
+          {features.map((feature) => (
+            <div className="flex items-start" key={feature.name}>
+              <div className="bg-accent row-span-3 flex size-14 items-center justify-center rounded-xl sm:size-24">
+                <feature.icon className="text-foreground size-9 sm:size-14" />
               </div>
-              {feature.name}
-            </dt>
-            <dd className="text-foreground mt-2 text-base/7">
-              {feature.description}
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  </section>
-)
+              <div className="ml-2 flex-1">
+                <dt className="text-accent-foreground col-span-2 text-base sm:text-lg">
+                  {feature.name}
+                </dt>
+                <dd className="text-accent-foreground col-span-2 row-span-2 text-xs font-light sm:text-sm">
+                  {feature.description}
+                </dd>
+              </div>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  )
+}
 
 export default Service

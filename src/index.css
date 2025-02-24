@@ -28,6 +28,7 @@ layer(base);
   --roseville: hsl(69, 48%, 34%);
   --roseville-primary: hsl(69, 69%, 25%);
   --roseville-accent: hsl(88, 38.5%, 15.3%);
+  --roseville-background: hsl(67, 24%, 93%);
 
   --background: hsl(0 0% 100%);
   --foreground: var(--roseville);
@@ -39,7 +40,7 @@ layer(base);
   --primary-foreground: hsl(210 40% 98%);
   --muted: hsl(210 40% 96.1%);
   --muted-foreground: hsl(215.4 16.3% 46.9%);
-  --accent: hsl(210 40% 96.1%);
+  --accent: var(--roseville-background);
   --accent-foreground: var(--roseville-accent);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(210 40% 98%);
