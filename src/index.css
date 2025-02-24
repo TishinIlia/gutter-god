@@ -28,7 +28,7 @@ layer(base);
   --roseville: hsl(69, 48%, 34%);
   --roseville-primary: hsl(69, 69%, 25%);
   --roseville-accent: hsl(88, 38.5%, 15.3%);
-  --roseville-background: hsl(67, 24%, 93%);
+  --roseville-background: hsl(76, 19%, 89%);
 
   --background: hsl(0 0% 100%);
   --foreground: var(--roseville);

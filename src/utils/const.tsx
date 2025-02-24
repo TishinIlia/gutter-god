@@ -86,7 +86,7 @@ export const FAQs: FAQType[] = [
         <br />
         There are several situations where you may need to clean your gutters
         more often, including:
-        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+        <ul className="list-disc sm:my-6 sm:ml-6 [&>li]:mt-2">
           <li>
             After storms that deposit leaves, dirt, and debris into your gutters
           </li>
@@ -120,7 +120,7 @@ export const FAQs: FAQType[] = [
       <>
         Neglecting gutter maintenance can lead to serious consequences,
         including:
-        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+        <ul className="list-disc sm:my-6 sm:ml-6 [&>li]:mt-2">
           <li>
             <strong>Basement Flooding</strong> – When water overflows due to
             clogged gutters, it can saturate the soil near your foundation,
@@ -174,7 +174,7 @@ export const FAQs: FAQType[] = [
       <>
         A professional gutter cleaning service varies in duration based on the
         size of your home and the extent of debris accumulation.
-        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+        <ul className="list-disc sm:my-6 sm:ml-6 [&>li]:mt-2">
           <li>Small homes with little debris: 20–30 minutes</li>
           <li>Small homes with a lot of debris: 60–90 minutes</li>
           <li>Larger homes (5,000+ sq. ft.): 2–3 hours with heavy debris</li>

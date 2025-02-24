@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { ChevronDownIcon } from 'lucide-react'
+
 import {
   Accordion,
   AccordionContent,
@@ -9,29 +11,33 @@ import {
 import { FAQs } from '@/utils/const.tsx'
 
 const FAQ: FC = () => (
-  <div className="bg-background px-6 py-24 sm:py-32 lg:px-8">
-    <div className="mx-auto">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="text-foreground text-5xl font-semibold tracking-tight sm:text-7xl">
-          Frequently asked questions
-        </h2>
-        <div className="divide-foreground/10 mt-10 space-y-6 divide-y">
-          <Accordion className="pt-6" type="multiple">
-            {FAQs.map((faq, index) => (
-              <AccordionItem value={`${index}`}>
-                <AccordionTrigger>
-                  <span className="text-foreground text-base/7 font-semibold">
-                    {faq.question}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-foreground text-base/7">{faq.answer}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </div>
+  <div className="mx-auto px-4 py-7 sm:max-w-3xl sm:py-10">
+    <h2 className="text-accent-foreground text-sm font-bold tracking-tight sm:text-3xl">
+      Frequently Asked Questions
+    </h2>
+    <div className="mt-5">
+      <Accordion className="space-y-1" type="multiple">
+        {FAQs.map((faq, index) => (
+          <AccordionItem
+            className="bg-accent rounded-2xl py-2 pr-2 pl-2 sm:rounded-3xl sm:pl-6"
+            value={`${index}`}
+          >
+            <AccordionTrigger className="group flex w-full items-start justify-between p-0">
+              <span className="text-accent-foreground flex-1">
+                {faq.question}
+              </span>
+              <span className="bg-background flex size-5 items-center justify-center rounded-full sm:size-9">
+                <ChevronDownIcon className="text-accent-foreground size-2 in-data-[state=open]:rotate-180 sm:size-6" />
+              </span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-accent-foreground pt-3 font-light">
+                {faq.answer}
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   </div>
 )
