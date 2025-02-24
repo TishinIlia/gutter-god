@@ -11,6 +11,7 @@ interface HeaderProps {
 import { PhoneIcon } from 'lucide-react'
 
 import Logo from '@/components/logo/logo.tsx'
+import { PHONE } from '@/utils/const.tsx'
 
 const Header: FC<HeaderProps> = ({ seModalOpen }) => {
   return (
@@ -23,7 +24,7 @@ const Header: FC<HeaderProps> = ({ seModalOpen }) => {
           <a href="/">
             <span className="flex items-center">
               <Logo className="fill-foreground h-8 w-auto" />
-              <span className="text-foreground ml-1.5 font-medium uppercase">
+              <span className="text-foreground mr-2 ml-1.5 text-sm font-medium uppercase sm:text-base">
                 Roseville Gutter
               </span>
             </span>
@@ -35,7 +36,7 @@ const Header: FC<HeaderProps> = ({ seModalOpen }) => {
             Contact Us
           </Button>
           <Button className="flex sm:hidden" size="icon">
-            <a href="tel:5551234567">
+            <a href={`tel:${PHONE}`}>
               <PhoneIcon />
             </a>
           </Button>

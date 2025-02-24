@@ -196,3 +196,5 @@ export const FAQs: FAQType[] = [
     question: 'Are Underground Drains Included in Gutter Cleaning Services?',
   },
 ]
+
+export const PHONE = '3239495276'
