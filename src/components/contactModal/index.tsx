@@ -1,20 +1,21 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { isPossiblePhoneNumber } from 'react-phone-number-input'
 
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import * as v from 'valibot'
 
-import MethodToggle from '@/components/methodToggle/methodToggle.tsx'
+import MethodToggle from '@/components/methodToggle/methodToggle'
 import Required from '@/components/required'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card.tsx'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogPortal,
   DialogTitle,
-} from '@/components/ui/dialog.tsx'
+} from '@/components/ui/dialog'
 import {
   Form,
   FormControl,
@@ -23,7 +24,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/ui/input.tsx'
+import { Input } from '@/components/ui/input'
 
 interface ContactModalProps {
   open: boolean
@@ -31,15 +32,16 @@ interface ContactModalProps {
 }
 
 const formSchema = v.object({
-  method: v.picklist(['phone', 'text', 'whatsapp']),
-  name: v.pipe(
-    v.string('Your name must be a string.'),
-    v.trim(),
-    v.nonEmpty('Please enter your name.')
+  method: v.picklist(
+    ['phone', 'text', 'whatsapp'],
+    'Please select callback method.'
   ),
+  name: v.pipe(v.string(), v.trim(), v.nonEmpty('Please enter your name.')),
   phone: v.pipe(
     v.string(),
     v.trim(),
+    v.nonEmpty('Please enter your phone.'),
+    v.check(isPossiblePhoneNumber, 'Invalid phone number'),
     v.digits('The string contains something other than digits.')
   ),
 })
@@ -59,21 +61,25 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
   const { control, handleSubmit } = form
 
   const onSubmit = (values: formSchemaType) => {
+    setOpen(false)
     console.log(values)
   }
 
   return (
     <Dialog onOpenChange={setOpen} open={open}>
       <DialogPortal>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>
+        <DialogContent
+          aria-describedby={undefined}
+          className="p-2 sm:max-w-xl sm:p-6"
+        >
+          <DialogHeader className="px-3">
+            <DialogTitle className="text-accent-foreground max-w-xl text-sm font-bold sm:text-xl">
               Choose the way to communicate works best for you
             </DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-1 gap-4">
-            <Card>
-              <CardContent className="pt-6">
+            <Card className="py-2">
+              <CardContent className="px-2 pt-2 sm:px-6 sm:pt-6">
                 <Form {...form}>
                   <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     <FormField
@@ -81,15 +87,13 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>
+                          <FormLabel className="text-accent-foreground">
                             Name
                             <Required />
                           </FormLabel>
                           <FormControl>
                             <Input
-                              minLength={1}
                               placeholder="John Galt"
-                              required
                               type="text"
                               {...field}
                             />
@@ -97,10 +101,6 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                           <FormMessage />
                         </FormItem>
                       )}
-                      rules={{
-                        minLength: 1,
-                        required: true,
-                      }}
                     />
                     <FormField
                       control={control}
@@ -108,16 +108,13 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                       render={({ field }) => {
                         return (
                           <FormItem>
-                            <FormLabel>
+                            <FormLabel className="text-accent-foreground">
                               Phone
                               <Required />
                             </FormLabel>
                             <FormControl>
                               <Input
-                                minLength={1}
-                                pattern="[0-9]{10}"
                                 placeholder="1234567890"
-                                required
                                 type="tel"
                                 {...field}
                               />
@@ -125,11 +122,6 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                             <FormMessage />
                           </FormItem>
                         )
-                      }}
-                      rules={{
-                        minLength: 1,
-                        pattern: /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
-                        required: true,
                       }}
                     />
                     <FormField
@@ -139,7 +131,7 @@ const ContactModal: FC<ContactModalProps> = ({ open, setOpen }) => {
                         const { onChange, value } = field
                         return (
                           <FormItem>
-                            <FormLabel>
+                            <FormLabel className="text-accent-foreground">
                               Preferred communication method
                               <Required />
                             </FormLabel>
