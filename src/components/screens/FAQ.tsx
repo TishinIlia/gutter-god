@@ -20,6 +20,7 @@ const FAQ: FC = () => (
         {FAQs.map((faq, index) => (
           <AccordionItem
             className="bg-accent rounded-2xl py-2 pr-2 pl-2 sm:rounded-3xl sm:pl-6"
+            key={faq.question}
             value={`${index}`}
           >
             <AccordionTrigger className="group flex w-full items-start justify-between p-0">

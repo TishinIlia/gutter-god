@@ -21,7 +21,12 @@ const ResponsiveImage: FC<ResponsiveImageProps> = ({
   return (
     <picture>
       {sources.map(({ media, srcSet, type }) => (
-        <source media={media} srcSet={srcSet} type={type} />
+        <source
+          key={media + srcSet + type}
+          media={media}
+          srcSet={srcSet}
+          type={type}
+        />
       ))}
       <img alt={alt} className={className} src={src} />
     </picture>
