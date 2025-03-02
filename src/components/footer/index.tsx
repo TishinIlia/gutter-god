@@ -4,7 +4,7 @@ import Logo from '@/components/logo/logo.tsx'
 
 const Footer: FC = () => (
   <footer className="bg-background">
-    <div className="mx-auto w-screen p-2 lg:p-4">
+    <div className="mx-auto w-screen p-4 lg:p-6">
       <div className="flex items-center justify-between">
         <div className="flex">
           <a href="/">
