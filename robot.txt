@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /private/
+Allow: /wp-content/uploads/
+
+Sitemap: https://www.rosevillegutter.com/sitemap.xml
