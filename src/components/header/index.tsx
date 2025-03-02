@@ -32,6 +32,7 @@ const Header: FC = () => {
               className="group-hover:fill-primary group-focus:fill-primary"
               size={24}
             />
+            <span className="sr-only">Call {PHONE}</span>
             <span className="ml-2 hidden text-xl sm:block">{PHONE}</span>
           </a>
         </div>
