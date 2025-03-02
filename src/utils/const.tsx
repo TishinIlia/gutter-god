@@ -197,4 +197,4 @@ export const FAQs: FAQType[] = [
   },
 ]
 
-export const PHONE = '3239495276'
+export const PHONE = '279-259-6214'

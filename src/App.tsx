@@ -21,9 +21,9 @@ const App: FC = () => {
 
   return (
     <>
+      <Header />
       <div className="flex flex-col sm:min-h-screen">
-        <Header seModalOpen={seModalOpen} />
-        <Hero seModalOpen={seModalOpen} />
+        <Hero />
       </div>
       <div
         className="bg-auto bg-repeat"

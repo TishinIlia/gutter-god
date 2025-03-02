@@ -4,6 +4,7 @@ import ResponsiveImage, {
   ResponsiveImageSource,
 } from '@/components/responsiveImage'
 import { Button } from '@/components/ui/button'
+import { PHONE } from '@/utils/const.tsx'
 
 import hero2kPng from '/hero_2k.png'
 import hero2kWebp from '/hero_2k.webp'
@@ -21,10 +22,6 @@ import heroVHdPng from '/hero_v_hd.png'
 import heroVHdWebp from '/hero_v_hd.webp'
 import heroVSdPng from '/hero_v_sd.png'
 import heroVSdWebp from '/hero_v_sd.webp'
-
-interface HeroProps {
-  seModalOpen: (open: boolean) => void
-}
 
 const heroImageSources: ResponsiveImageSource[] = [
   {
@@ -109,7 +106,7 @@ const heroImageSources: ResponsiveImageSource[] = [
   },
 ]
 
-const Hero: FC<HeroProps> = ({ seModalOpen }) => (
+const Hero: FC = () => (
   <section className="flex flex-1 flex-col">
     <div className="relative isolate flex min-h-[calc(100vh-var(--header-height))] flex-1 flex-col justify-center overflow-hidden py-20">
       <ResponsiveImage
@@ -127,7 +124,9 @@ const Hero: FC<HeroProps> = ({ seModalOpen }) => (
           gutter cleaning services.
         </p>
         <div className="mt-3 flex items-center justify-start sm:mt-5">
-          <Button onClick={() => seModalOpen(true)}>Contact Us</Button>
+          <Button type="button">
+            <a href={`tel:${PHONE}`}>Contact Us</a>
+          </Button>
         </div>
       </div>
     </div>
