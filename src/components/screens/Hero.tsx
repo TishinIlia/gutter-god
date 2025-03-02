@@ -3,7 +3,7 @@ import { FC } from 'react'
 import ResponsiveImage, {
   ResponsiveImageSource,
 } from '@/components/responsiveImage'
-import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils.ts'
 import { PHONE } from '@/utils/const.tsx'
 
 import hero2kPng from '/hero_2k.png'
@@ -124,9 +124,16 @@ const Hero: FC = () => (
           gutter cleaning services.
         </p>
         <div className="mt-3 flex items-center justify-start sm:mt-5">
-          <Button type="button">
-            <a href={`tel:${PHONE}`}>Contact Us</a>
-          </Button>
+          <a
+            className={cn(
+              "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+              'h-9 px-3 py-1.5 has-[>svg]:px-2.5',
+              'bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs'
+            )}
+            href={`tel:${PHONE}`}
+          >
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
