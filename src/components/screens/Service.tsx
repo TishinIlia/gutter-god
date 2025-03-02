@@ -59,23 +59,23 @@ const Service: FC = () => {
         </p>
       </div>
       <div className="max-w-2xl py-4 sm:mx-auto sm:py-20">
-        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:max-w-none md:grid-cols-2 md:gap-y-16">
+        <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:max-w-none md:grid-cols-2 md:gap-y-16">
           {features.map((feature) => (
             <div className="flex items-start" key={feature.name}>
               <div className="bg-accent row-span-3 flex size-14 items-center justify-center rounded-xl sm:size-24">
                 <feature.icon className="text-foreground size-9 sm:size-14" />
               </div>
               <div className="ml-2 flex-1">
-                <dt className="text-accent-foreground col-span-2 text-base sm:text-lg">
+                <div className="text-accent-foreground col-span-2 text-base sm:text-lg">
                   {feature.name}
-                </dt>
-                <dd className="text-accent-foreground col-span-2 row-span-2 text-xs font-light sm:text-sm">
+                </div>
+                <div className="text-accent-foreground col-span-2 row-span-2 text-xs font-light sm:text-sm">
                   {feature.description}
-                </dd>
+                </div>
               </div>
             </div>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   )
