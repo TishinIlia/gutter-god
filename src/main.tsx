@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import amplitude from '@amplitude/analytics-browser'
+import * as amplitude from '@amplitude/analytics-browser'
 
 import './index.css'
 

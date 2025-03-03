@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import amplitude from '@amplitude/analytics-browser'
+import * as amplitude from '@amplitude/analytics-browser'
 
 import ResponsiveImage, {
   ResponsiveImageSource,
