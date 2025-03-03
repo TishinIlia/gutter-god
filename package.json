@@ -15,6 +15,7 @@
     "pretty": "prettier --cache --write \"./**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.11.13",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",

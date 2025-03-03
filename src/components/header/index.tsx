@@ -2,6 +2,7 @@
 
 import { FC } from 'react'
 
+import amplitude from '@amplitude/analytics-browser'
 import { PhoneIcon } from 'lucide-react'
 
 import Logo from '@/components/logo/logo.tsx'
@@ -27,6 +28,11 @@ const Header: FC = () => {
           <a
             className="group hover:text-primary flex items-center"
             href={`tel:${PHONE}`}
+            onClick={() =>
+              amplitude.track('Call Button Clicked', {
+                buttonName: 'header_call',
+              })
+            }
           >
             <PhoneIcon
               className="group-hover:fill-primary group-focus:fill-primary"

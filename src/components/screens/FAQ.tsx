@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import amplitude from '@amplitude/analytics-browser'
 import { ChevronDownIcon } from 'lucide-react'
 
 import {
@@ -23,7 +24,12 @@ const FAQ: FC = () => (
             key={faq.question}
             value={`${index}`}
           >
-            <AccordionTrigger className="group flex w-full items-start justify-between p-0">
+            <AccordionTrigger
+              className="group flex w-full items-start justify-between p-0"
+              onClick={() =>
+                amplitude.track('FAQ Clicked', { faqIndex: index })
+              }
+            >
               <span className="text-accent-foreground flex-1">
                 {faq.question}
               </span>

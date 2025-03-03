@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import amplitude from '@amplitude/analytics-browser'
+
 import ResponsiveImage, {
   ResponsiveImageSource,
 } from '@/components/responsiveImage'
@@ -131,6 +133,11 @@ const Hero: FC = () => (
               'bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs'
             )}
             href={`tel:${PHONE}`}
+            onClick={() =>
+              amplitude.track('Call Button Clicked', {
+                buttonName: 'hero_call',
+              })
+            }
           >
             Contact Us
           </a>
