@@ -9,8 +9,12 @@ import { ThemeProvider } from '@/providers/theme-provider.tsx'
 
 import App from './App.tsx'
 
+const isProduction = import.meta.env.PROD
+
 // Initialize Amplitude with your API key
-amplitude.init('9a89334a73e90cda4b933f725f6ba6bf')
+amplitude.init('9a89334a73e90cda4b933f725f6ba6bf', {
+  autocapture: isProduction,
+})
 
 const root = document.getElementById('root') as HTMLElement
 
