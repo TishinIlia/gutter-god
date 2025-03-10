@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
-import * as amplitude from '@amplitude/analytics-browser'
+import { BrowserRouter } from 'react-router'
 
 import './index.css'
 
-import { ThemeProvider } from '@/providers/theme-provider.tsx'
+import * as amplitude from '@amplitude/analytics-browser'
 
-import App from './App.tsx'
+import { ThemeProvider } from '@/providers/theme-provider.tsx'
+import Router from '@/Router.tsx'
 
 const isProduction = import.meta.env.PROD
 
@@ -21,9 +21,11 @@ const root = document.getElementById('root') as HTMLElement
 if (root) {
   createRoot(root).render(
     <StrictMode>
-      <ThemeProvider defaultTheme="system">
-        <App />
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider defaultTheme="system">
+          <Router />
+        </ThemeProvider>
+      </BrowserRouter>
     </StrictMode>
   )
 }
